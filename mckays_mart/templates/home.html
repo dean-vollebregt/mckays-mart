@@ -1,0 +1,118 @@
+
+{% extends "base.html" %}
+{% block head %}
+<header>
+  <a href="http://127.0.0.1:8000/home" id="logo">
+    <h1>McKays Mart</h1>
+    <h2>99 Unley Road, Parkside</h2>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/living">Living</a></li>
+      <li><a href="http://127.0.0.1:8000/dining">Dining</a></li>
+      <li><a href="http://127.0.0.1:8000/bedroom">Bedroom</a></li>
+      <li><a href="http://127.0.0.1:8000/hallway">Hallway</a></li>
+      <li><a href="http://127.0.0.1:8000/office">Office</a></li>
+      <li><a href="http://127.0.0.1:8000/musical">Musical</a></li>
+      <li><a href="http://127.0.0.1:8000/art">Art</a></li>
+      <li>
+        <div class="dropdown">
+            <button class="dropbtn"><a>Info</a></button>
+            <div class="dropdown-content">
+              <a href="http://127.0.0.1:8000/home" class="selected">Home</a>
+              <a href="http://127.0.0.1:8000/about">About</a>
+              <a href="http://127.0.0.1:8000/hours">Hours</a>
+              <a href="http://127.0.0.1:8000/contact">Contact</a>      
+            </div>
+        </div>
+      </li>
+      </ul>
+    </nav>
+</header> 
+{% endblock %}
+
+
+{% block content %}
+
+<section>
+
+  {% for home in home_queryset %}
+  <a id="home-text">
+  <h3>{{ home.title }}</h3>
+    {% if home.message %}
+      <h3>{{ home.message }}</h3>
+    {% endif %}
+  {% endfor %}
+  </a>
+
+  <ul id="gallery">
+    {% for living in living_queryset %}
+    <li>
+      <a href="{{ living.image.url }}">
+        <img src="{{ living.image.url }}" alt="">
+        <p>{{ living.description }}  {{ living.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+    
+    {% for dining in dining_queryset %}
+    <li>
+      <a href="{{ dining.image.url }}">
+        <img src="{{ dining.image.url }}" alt="">
+        <p>{{ dining.description }}  {{ dining.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+  
+    {% for bedroom in bedroom_queryset %}
+    <li>
+      <a href="{{ bedroom.image.url }}">
+        <img src="{{ bedroom.image.url }}" alt="">
+        <p>{{ bedroom.description }}  {{ bedroom.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+   
+    {% for hallway in hallway_queryset %}
+    <li>
+      <a href="{{ hallway.image.url }}">
+        <img src="{{ hallway.image.url }}" alt="">
+        <p>{{ hallway.description }}  {{ hallway.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+ 
+    {% for office in office_queryset %}
+    <li>
+      <a href="{{ office.image.url }}">
+        <img src="{{ office.image.url }}" alt="">
+        <p>{{ office.description }}  {{ office.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+
+    {% for musical in musical_queryset %}
+    <li>
+      <a href="{{ musical.image.url }}">
+        <img src="{{ musical.image.url }}" alt="">
+        <p>{{ musical.description }}  {{ musical.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+   
+    {% for art in art_queryset %}
+    <li>
+      <a href="{{ art.image.url }}">
+        <img src="{{ art.image.url }}" alt="">
+        <p>{{ art.description }}  {{ art.price }}</p>
+      </a>
+    </li>
+    {% endfor %}
+    </ul>
+    </br>
+</section>
+{% endblock %}
+
+
+
+

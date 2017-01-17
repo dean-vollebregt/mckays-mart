@@ -1,0 +1,105 @@
+
+
+
+/*if any larger than 480px apply these styles*/
+
+@media screen and (min-width: 480px) {
+  
+  /**********************************
+  TWO COLUMN LAYOUT
+  ***********************************/
+
+  
+  #primary {
+    width: 50%;
+    float: left;
+  }
+  
+  #secondary {
+    width: 40%;
+    float: right;
+  }
+  
+
+ 
+  /**********************************
+  PAGE: PORTFOLIO
+  ***********************************/
+  
+  #gallery li {
+    float: left;
+    width: 28.3333%;
+    margin: 2.5%;
+    background-color: #f5f5f5;
+    color: #bdc3c7;
+  }
+
+  
+  #gallery li:nth-child(4n) {
+    clear: left;
+  }
+  
+  /**********************************
+  PAGE: ABOUT
+  ***********************************/
+  
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+  
+   
+
+}
+
+@media screen and (min-width: 660px) {
+
+  /**********************************
+  HEADER
+  ***********************************/
+  
+
+
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-left: 0%;
+    margin-right: 0%;
+    text-align: left;
+    width: 62%;
+  }
+  
+  nav li {
+    display: inline-block;
+  }
+  
+  nav ul {
+
+    padding: 0
+  }
+
+  
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 28%;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+  
+  header {
+    border-bottom: 5px solid #990000;
+    margin-bottom: 60px;
+  }
+  
+  
+}

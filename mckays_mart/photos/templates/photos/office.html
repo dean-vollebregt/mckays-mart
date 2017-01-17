@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% block head %}
+<header>
+  <a href="http://127.0.0.1:8000/home" id="logo">
+    <h1>McKays Mart</h1>
+    <h2>99 Unley Road, Parkside</h2>
+  </a>
+  <nav>
+    <ul>
+      <li><a href="http://127.0.0.1:8000/living">Living</a></li>
+      <li><a href="http://127.0.0.1:8000/dining">Dining</a></li>
+      <li><a href="http://127.0.0.1:8000/bedroom">Bedroom</a></li>
+      <li><a href="http://127.0.0.1:8000/hallway">Hallway</a></li>
+      <li><a href="http://127.0.0.1:8000/office" class ="selected">Office</a></li>
+      <li><a href="http://127.0.0.1:8000/musical">Musical</a></li>
+      <li><a href="http://127.0.0.1:8000/art">Art</a></li>
+      <li>
+        <div class="dropdown">
+            <button class="dropbtn"><a>Info</a></button>
+            <div class="dropdown-content">
+              <a href="http://127.0.0.1:8000/home">Home</a>
+              <a href="http://127.0.0.1:8000/about">About</a>
+              <a href="http://127.0.0.1:8000/hours">Hours</a>
+              <a href="http://127.0.0.1:8000/contact">Contact</a>
+            </div>
+        </div>
+      </li>
+      </ul>
+    </nav>
+</header> 
+{% endblock %}
+
+{% block content %}
+<section>
+  <ul id="gallery">
+    {% for office in offices %}
+    {% if office.image %}
+    <li>
+      <a href="{{ office.image.url }}">
+        <img src="{{ office.image.url }}" alt="">
+        <p>{{ office.description }}  {{ office.price }}</p>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
+

@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath mckays_mart mckays_mart.wsgi --log-file -
