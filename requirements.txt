@@ -18,7 +18,7 @@ Pillow==3.4.2
 psycopg2==2.6.2
 pyasn1==0.1.9
 python-dateutil==2.6.0
-PyYAML==3.12
+PyYAML==5.4
 rsa==3.4.2
 s3transfer==0.1.10
 six==1.10.0
